@@ -1,48 +1,56 @@
-import { IconCaretDown, IconHome, IconList } from '@arco-design/web-react/icon';
+import { IconHome, IconList } from '@arco-design/web-react/icon';
 import { Outlet, Navigate, useLocation, useNavigate } from 'react-router';
-import AvatarImg from '@/assets/images/avatar-user.png';
-
-import styles from './index.module.less';
-import { Dropdown, Menu } from '@tc/ui-react';
+import { Header, Menu, Layout as TcLayout } from 'tc-components';
 
 function Layout(): React.ReactNode {
   const location = useLocation();
   const navigate = useNavigate();
-
   return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerRight}>
-            <Dropdown
-              triggerProps={{ autoAlignPopupWidth: false }}
-              droplist={
-                <Menu>
-                  <Menu.Item
-                    className={`user-info-dropdownItem`}
-                    key="logout"
-                    onClick={() => {}}
-                  >
-                    退出
-                  </Menu.Item>
-                </Menu>
-              }
-              position="br"
-            >
-              <div className={styles.userInfo}>
-                <div className={styles.userAvatar}>
-                  <img src={AvatarImg} height={20} alt="" />
-                </div>
-                <div className={styles.userName}>ChangeKong</div>
-
-                <IconCaretDown className={styles.dropdownIcon} />
-              </div>
-            </Dropdown>
-          </div>
-        </div>
-        <Outlet />
-      </div>
-    </>
+    <TcLayout
+      header={
+        <Header
+          logo={{
+            url: '/logo.png',
+            subTitle: '科研助手平台',
+            link: 'https://chat-taichu-web-test.wair.ac.cn',
+          }}
+          extras={<div>extra</div>}
+          userInfo={{
+            name: '张三',
+            onLogout: () => {
+              console.log('logout');
+            },
+          }}
+        />
+      }
+      menu={
+        <Menu
+          menuKey="menu1"
+          locationPath={location.pathname}
+          onClickMenuItem={menuItem => {
+            navigate({
+              pathname: menuItem.path || '',
+            });
+          }}
+          menus={[
+            {
+              title: '首页',
+              id: 'detail',
+              path: '/detail',
+              icon: <IconHome />,
+            },
+            {
+              title: '列表',
+              id: 'list',
+              path: '/list',
+              icon: <IconList />,
+            },
+          ]}
+        />
+      }
+    >
+      <Outlet />
+    </TcLayout>
   );
 }
 
