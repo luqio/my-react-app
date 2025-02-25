@@ -1,12 +1,5 @@
 import airbnbReact from 'eslint-config-airbnb/rules/react';
 import airbnbReactHooks from 'eslint-config-airbnb/rules/react-hooks';
-import bestPractices from 'eslint-config-airbnb-base/rules/best-practices';
-import errors from 'eslint-config-airbnb-base/rules/errors';
-import style from 'eslint-config-airbnb-base/rules/style';
-// import variables from 'eslint-config-airbnb-base/rules/variables';
-import es6 from 'eslint-config-airbnb-base/rules/es6';
-// import imports from 'eslint-config-airbnb-base/rules/imports';
-import strict from 'eslint-config-airbnb-base/rules/strict';
 
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
@@ -42,13 +35,6 @@ export default [
       },
     },
     rules: {
-      // ...bestPractices.rules,
-      // ...errors.rules,
-      // ...style.rules,
-      // // ...variables.rules, ??
-      // ...es6.rules,
-      // // ...imports.rules, ??
-      // ...strict.rules,
       ...airbnbReactHooks.rules,
       ...airbnbReact.rules,
     },
