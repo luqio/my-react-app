@@ -1,6 +1,6 @@
 import request from './request';
 import { ApiResponse } from '@/types/network';
-import { Message } from '@tc/ui-react';
+import { Message } from 'tc-design-ui';
 
 type TagItem = {
   id: number;

@@ -7,7 +7,8 @@
 
 - **框架**: React + TypeScript + Vite
 - **UI 组件**:
-  - tc-components - 自定义 UI 组件库
+  - @tc/components-react - 太初组件库
+  - tc-design-ui - 太初基础组件库
   - arco-design - 企业级 UI 组件
 - **工具链**:
   - pnpm - 包管理器

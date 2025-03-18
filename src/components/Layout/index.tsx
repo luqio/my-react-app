@@ -1,6 +1,8 @@
-import { IconHome, IconList } from '@arco-design/web-react/icon';
-import { Outlet, Navigate, useLocation, useNavigate } from 'react-router';
-import { Header, Menu, Layout as TcLayout } from 'tc-components';
+import { IconHome } from '@arco-design/web-react/icon';
+import { Outlet, useLocation, useNavigate } from 'react-router';
+import { Header, Menu, Layout as TcLayout } from '@tc/components-react';
+import IconInternet from '@/assets/svg/icon_internet.svg?react';
+import Logo from '@/assets/images/logo.png'
 
 function Layout(): React.ReactNode {
   const location = useLocation();
@@ -10,7 +12,7 @@ function Layout(): React.ReactNode {
       header={
         <Header
           logo={{
-            url: '/logo.png',
+            url: Logo,
             subTitle: '科研助手平台',
             link: 'https://chat-taichu-web-test.wair.ac.cn',
           }}
@@ -43,7 +45,7 @@ function Layout(): React.ReactNode {
               title: '列表',
               id: 'list',
               path: '/list',
-              icon: <IconList />,
+              icon: <IconInternet className="arco-icon tc-svg-icon" />,
             },
           ]}
         />

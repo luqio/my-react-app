@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import reactLogo from '@/assets/react.svg';
-import viteLogo from '/vite.svg'
-import './Home.module.less'
+import IconInternet from '@/assets/svg/icon_internet.svg?react';
+import styles from  './index.module.less';
 
 // 定义一个名为Home的函数组件
 function Home() {
@@ -13,12 +12,9 @@ function Home() {
     <>
       <div>
         <br />
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <span className={styles.icon}>
+          <IconInternet className="tc-svg-icon" />
+        </span>
       </div>
     </>
   );

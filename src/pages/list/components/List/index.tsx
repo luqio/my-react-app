@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import TestLint from './TestLint';
-import { Select } from '@tc/ui-react';
+import { Select } from 'tc-design-ui';
 import { handelGetCategoryList } from '@/services/api';
 
 export default function List(props: {
@@ -21,7 +20,6 @@ export default function List(props: {
       <Select>
         <Select.Option value="1">test</Select.Option>
       </Select>
-      <TestLint UserName={UserName} phoneNumber={phoneNumber} hidden={hidden} />
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <span>{UserName}</span>
         <span>{phoneNumber}</span>
