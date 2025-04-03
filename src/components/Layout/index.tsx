@@ -1,8 +1,8 @@
 import { IconHome } from '@arco-design/web-react/icon';
-import { Outlet, useLocation, useNavigate } from 'react-router';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Header, Menu, Layout as TcLayout } from '@tc/components-react';
 import IconInternet from '@/assets/svg/icon_internet.svg?react';
-import Logo from '@/assets/images/logo.png'
+import Logo from '@/assets/images/logo.png';
 
 function Layout(): React.ReactNode {
   const location = useLocation();
