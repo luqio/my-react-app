@@ -52,6 +52,7 @@ export default [
       'react/jsx-wrap-multilines': 'off',
       'react/jsx-props-no-spreading': 'off',
       'react/react-in-jsx-scope': 'off',
+      'react/require-default-props': 'off',
       'react/function-component-definition': [
         'error',
         {
