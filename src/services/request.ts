@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
 import { ApiResponse } from '@/types/network';
-import { Message } from 'tc-design-ui';
+import { Message } from '@tc/design-ui';
 
 // 创建 axios 实例
 const request = axios.create({
@@ -15,7 +15,7 @@ const request = axios.create({
 
 // 请求拦截器
 request.interceptors.request.use(
-  async (config) => {
+  async config => {
     // 如果是文件上传，删除 Content-Type
     if (config.data instanceof FormData) {
       delete config.headers['Content-Type'];
@@ -23,29 +23,29 @@ request.interceptors.request.use(
 
     return config;
   },
-  (error) => {
+  error => {
     Message.error('请求配置错误');
     return Promise.reject(error);
-  }
+  },
 );
 
 // 响应拦截器
 request.interceptors.response.use(
-  (response) => {
+  response => {
     if (response.request.responseType === 'arraybuffer') {
-      return Promise.resolve(response.data)
+      return Promise.resolve(response.data);
     }
 
     if (
       response?.config?.url !== '/account/check_login' &&
       response.data?.status !== 1
     ) {
-      const errMessage = response?.data?.message
-      Message.error(typeof errMessage === 'string' ? errMessage : '请求失败')
+      const errMessage = response?.data?.message;
+      Message.error(typeof errMessage === 'string' ? errMessage : '请求失败');
 
-      return Promise.reject(response.data)
+      return Promise.reject(response.data);
     }
-    return Promise.resolve(response.data)
+    return Promise.resolve(response.data);
   },
   (error: AxiosError<ApiResponse>) => {
     if (error.response?.status === 401) {
@@ -62,12 +62,12 @@ request.interceptors.response.use(
       (error.response?.data as ApiResponse)?.message || '请求失败';
     Message.error(errorMsg);
     return Promise.reject(error);
-  }
+  },
 );
 
 // 导出登出函数
 export const logout = async () => {
-  const currentUrl = encodeURIComponent(window.location.origin+'/workbench');
+  const currentUrl = encodeURIComponent(window.location.origin + '/workbench');
   window.location.href = `/api/account/logout?next=${currentUrl}`;
 };
 

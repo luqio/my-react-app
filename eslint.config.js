@@ -60,6 +60,18 @@ export default [
           unnamedComponents: ['arrow-function'],
         },
       ],
+      // 禁止使用内联的dangerouslySetInnerHTML属性，以避免潜在的安全问题，级别为警告
+      'react/no-danger': 'warn',
+      // 要求在React Hook中使用所有外部依赖项，以避免潜在的bug，级别为警告
+      'react-hooks/exhaustive-deps': 'warn',
+      // 禁止定义未使用的prop类型，以保持代码的整洁和避免不必要的类型定义，级别为警告
+      'react/no-unused-prop-types': 'warn',
+      // 禁止在JSX中使用构造的上下文值，以避免不必要的性能开销和潜在的错误，级别为警告
+      'react/jsx-no-constructed-context-values': 'warn',
+      'react/require-default-props': 'off',
+      //使用解构赋值
+      'react/destructuring-assignment': 'warn',
+      'react/jsx-closing-tag-location': 'off',
     },
   },
   // TypeScript 特定配置
@@ -82,7 +94,6 @@ export default [
         'error',
         { argsIgnorePattern: '^_' },
       ],
-      '@typescript-eslint/no-explicit-any': 'warn',
       // TypeScript 文件的特殊规则
       'react/jsx-filename-extension': [
         'error',

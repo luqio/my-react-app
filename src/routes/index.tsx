@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ListComponent from '@/pages/list';
-import Detail from '@/pages/detail';
-import HomeComponent from '@/pages/home';
+import ListComponent from '@/pages/teams';
+import Detail from '@/pages/team';
 import Layout from '@/components/Layout';
 
 function RouteComponent() {
@@ -9,9 +8,9 @@ function RouteComponent() {
     <Router>
       <Routes>
         <Route element={<Layout />}>
-          <Route index Component={HomeComponent} />
-          <Route path="list" Component={ListComponent} />
-          <Route path="detail" Component={Detail} />
+          <Route index Component={ListComponent} />
+          <Route path="teams" Component={ListComponent} />
+          <Route path="teams/:teamId" Component={Detail} />
         </Route>
       </Routes>
     </Router>

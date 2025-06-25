@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import svgr from 'vite-plugin-svgr'
+import svgr from 'vite-plugin-svgr';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -30,20 +30,20 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 3002,
     open: true,
-    // proxy: {
-    //   '/api': {
-    //     target: 'http://192.168.50.130:9097',
-    //     changeOrigin: true,
-    //     secure: false,
-    //     // rewrite: path => path.replace(/^\/api/, ''),
-    //     // bypass(req, res, options: ProxyOptions) {
-    //     //   const proxyUrl = new URL(
-    //     //     options.rewrite?.(req?.url || '') || '',
-    //     //     options?.target?.toString() || ''
-    //     //   );
-    //     //   res?.setHeader('x-res-proxyUrl', proxyUrl.href);
-    //     // },
-    //   },
-    // },
+    proxy: {
+      '/api': {
+        target: 'http://192.168.50.161:8000',
+        changeOrigin: true,
+        secure: false,
+        // rewrite: path => path.replace(/^\/api/, ''),
+        // bypass(req, res, options: ProxyOptions) {
+        //   const proxyUrl = new URL(
+        //     options.rewrite?.(req?.url || '') || '',
+        //     options?.target?.toString() || ''
+        //   );
+        //   res?.setHeader('x-res-proxyUrl', proxyUrl.href);
+        // },
+      },
+    },
   },
 });
