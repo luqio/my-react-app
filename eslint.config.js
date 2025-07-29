@@ -72,6 +72,7 @@ export default [
       //使用解构赋值
       'react/destructuring-assignment': 'warn',
       'react/jsx-closing-tag-location': 'off',
+      'react/jsx-one-expression-per-line': 'off',
     },
   },
   // TypeScript 特定配置
