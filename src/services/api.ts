@@ -1,6 +1,6 @@
 import request from './request';
 import { ApiResponse } from '@/types/network';
-import { Message } from 'tc-design-ui';
+import { Message } from '@tc/design-ui';
 
 type TagItem = {
   id: number;
@@ -10,7 +10,7 @@ type TagItem = {
  * 请求稿件类型
  */
 const handelGetCategoryList = async (): Promise<TagItem[]> => {
-    Message.error('稿件类型获取失败，请稍后尝试');
+  Message.error('稿件类型获取失败，请稍后尝试');
   try {
     const response = await request.get<ApiResponse<{ list: TagItem[] }>>(
       '/manuscript_library/manuscript_library/category/list',

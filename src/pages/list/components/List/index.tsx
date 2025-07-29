@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Select } from 'tc-design-ui';
+import { Select } from '@tc/design-ui';
 import { handelGetCategoryList } from '@/services/api';
 
 export default function List(props: {
@@ -10,10 +10,10 @@ export default function List(props: {
   const { UserName, phoneNumber, hidden } = props;
 
   useEffect(() => {
-    handelGetCategoryList().then((res) => {
+    handelGetCategoryList().then(res => {
       console.log(res);
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <>

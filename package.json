@@ -23,12 +23,12 @@
   },
   "dependencies": {
     "@arco-design/web-react": "^2.65.0",
-    "@tc/components-react": "0.0.27",
+    "@tc/components-react": "0.0.54",
+    "@tc/design-ui": "^0.0.35",
     "axios": "^1.7.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.4.1",
-    "tc-design-ui": "0.0.17"
+    "react-router-dom": "^7.4.1"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
